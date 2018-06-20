@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './feedback.css';
+import { connect } from 'react-redux';
 
 export default function Feedback(props) {
   /** 
@@ -26,3 +27,13 @@ export default function Feedback(props) {
     </h2>
   );
 }
+
+
+
+const mapStateToProps = state => ({
+  guessCount: state.guesses.length,
+  feedback: state.feedback
+
+})
+
+export default connect(mapStateToProps)(Feedback);
